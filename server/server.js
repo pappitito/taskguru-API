@@ -40,6 +40,10 @@ app.use(helmet())
 app.use(cors())
 app.use(xss())
 
+app.get('/', (req,res)=>{
+    res.status(200).send('you successfully reached homepage')
+
+})
 app.use('/api/tasks',authenticateUser, router)
 app.use('/api/users', authRouter)
 
